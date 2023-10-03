@@ -1,5 +1,9 @@
+import '../../index.scss'
+
 export const Header = () => {
     return(
-        <h1>Header</h1>
+        <header>
+            <h1>MovInfo</h1>
+        </header>
     )
 }

@@ -1,7 +1,7 @@
 export const Footer = () => {
     return(
-        <header>
-            <h1>Footer</h1>
-        </header>
+        <footer>
+            <h1>Copyright © 2023 MovInfo. Todos os direitos reservados.</h1>
+        </footer>
     )
 }
