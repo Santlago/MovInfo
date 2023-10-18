@@ -1,0 +1,11 @@
+@import '../../index.scss';
+
+header {
+    background-color: $theme-color;
+    height: 10vh;
+
+    h1 {
+        color: $title;
+        text-align: center;
+    }
+}

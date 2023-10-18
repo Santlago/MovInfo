@@ -3,16 +3,6 @@ $background-color: black;
 $title: white;
 $text: white;
 
-header {
-    background-color: $theme-color;
-    height: 10vh;
-
-    h1 {
-        color: $title;
-        text-align: center;
-    }
-}
-
 .container {
     display: grid;
     grid-template-columns: 10% 80% 10%;
@@ -66,14 +56,4 @@ main {
 
 .ad2 {
     background-color: aquamarine;
-}
-
-footer {
-    background-color: $theme-color;
-    height: 10vh;
-    
-    h1 {
-        color: $title;
-        text-align: center;
-    }
 }
