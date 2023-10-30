@@ -1,0 +1,12 @@
+@import '../../index.scss';
+
+
+footer {
+    background-color: $theme-color;
+    height: 10vh;
+    
+    h1 {
+        color: $title;
+        text-align: center;
+    }
+}
