@@ -1,10 +1,9 @@
 "use client"
 
 import Link from "next/link"
-import { useEffect, useState } from "react"
+import { useState } from "react"
 
-
-export default function Cadastro(){
+export default function Login() {
 
     const [users, setUsers] = useState({
         email:'',
@@ -12,7 +11,8 @@ export default function Cadastro(){
         senha:''
     })
 
-    let metodo = 'post'
+    const [usersList, setUsersList] = useState([])
+
 
     const handleChange = e => {
         setUsers({...users, [e.target.name]:e.target.value})
@@ -20,31 +20,17 @@ export default function Cadastro(){
 
     const handleSubmit = e =>{
         e.preventDefault()
-        fetch(`http://localhost:5000/users/`,{
-        method: metodo,
-        headers:{"Content-Type":"application/json"},
-        body: JSON.stringify(users)
-      })
-      .then(window.location = '/')
-      .catch(error => console.error(error))    
+        fetch(`http://localhost:5000/users/`) 
+        .then(resp => resp.json())
+        .then(resp => console.log(resp))
+        .then(resp => setUsersList(resp))
+        .catch(error => console.error(error))
+        console.log(users)
     }
 
-    // useEffect(()=>{
-    //     if(prodId){
-    //         fetch(`http://localhost:5000/produto/${prodId}`)
-    //         .then(resp => resp.json())
-    //         .then(resp => setUsers(resp))
-    //         .catch(error => console.error(error))     
-    //     }
-    // },[prodId])
-
-
-
-
-
     return(
-        <main className="form">
-            <h1>Cadastro</h1>
+        <main>
+            <h1>Login</h1>
 
             <form onSubmit={handleSubmit}>
                 <input type="text" name='email' value={users.email}
@@ -53,9 +39,8 @@ export default function Cadastro(){
                 placeholder="Login" onChange={handleChange} /> <br />
                 <input type="password" name='senha' value={users.senha}
                 placeholder="Senha" onChange={handleChange} /> <br />
-                <button type="submit" >Cadastrar</button>
+                <button type="submit" >Login</button>
                 <Link href={'/'}>Cancelar</Link>
-
             </form>
         </main>
     )

@@ -6,6 +6,8 @@ export default function Home() {
       <div className='container'>
           <main>
               <h1>Home</h1>
+              <Link href={'/cadastro/'}>Cadastre-se</Link>
+              <Link href={'/login'}>Login</Link>
           </main>
       </div>
   )
